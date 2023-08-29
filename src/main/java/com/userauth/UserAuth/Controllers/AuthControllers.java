@@ -28,6 +28,8 @@ public class AuthControllers {
 
     @PostMapping("/login")
     public String login(@RequestBody User user){
-        return "";
+        if (authService.login(user))
+            return "Success";
+        return "Failed";
     }
 }
